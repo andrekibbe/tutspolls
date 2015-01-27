@@ -1,0 +1,11 @@
+%h1 Listing polls
+
+%ul
+  -@polls.each do |poll|
+    %li
+      = link_to poll.title, poll
+      |
+      = link_to 'Edit', edit_poll_path(poll)
+      = link_to 'Destroy', poll, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%p= link_to 'New Poll', new_poll_path, class: "btn btn-primary"

@@ -1,0 +1,9 @@
+%p#notice= notice
+
+%p
+  %b Title:
+  = @poll.title
+
+= link_to 'Edit', edit_poll_path(@poll)
+\|
+= link_to 'Back', polls_path
