@@ -3,9 +3,10 @@
 %ul
   -@polls.each do |poll|
     %li
-      = link_to poll.title, poll
-      |
-      = link_to 'Edit', edit_poll_path(poll)
-      = link_to 'Destroy', poll, :method => :delete, :data => { :confirm => 'Are you sure?' }
+      %p= link_to poll.title, poll
+      %p.btn-group.btn-group-xs
+        = link_to 'Edit', edit_poll_path(poll), class: "btn btn-default"
+        = link_to 'Back', polls_path, class: "btn btn-default"
+        = link_to 'Add question', new_poll_question_path(poll), class: "btn btn-default"
 
 %p= link_to 'New Poll', new_poll_path, class: "btn btn-primary"

@@ -1,0 +1,19 @@
+%h1 Listing questions
+
+%table
+  %tr
+    %th Title
+    %th Kind
+    %th Poll
+    %th
+    %th
+    %th
+
+  - @questions.each do |question|
+    %tr
+      %td= question.title
+      %td= question.kind
+      %td= question.poll
+      %td= link_to 'Show', [ @poll, question ]
+      %td= link_to 'Edit', edit_poll_question_path(@poll, question)
+      %td= link_to 'Destroy', [ @poll, question ], :method => :delete, :data => { :confirm => 'Are you sure?' }
