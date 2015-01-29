@@ -12,5 +12,5 @@
     .container
       =content_tag :div, flash[:notice], class: "flash bg-success" if flash[:notice]
       =content_tag :div, flash[:alert], class: "flash bg-danger" if flash[:notice]
-
       = yield
+    =yield :footer
