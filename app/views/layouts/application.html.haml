@@ -1,9 +1,9 @@
 !!!
 %html
   %head
-    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
     %title Tutspolls
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag "https://www.google.com/jsapi"
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = javascript_include_tag '//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js'
     = csrf_meta_tags
