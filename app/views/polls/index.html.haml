@@ -6,7 +6,6 @@
       %p= link_to poll.title, poll
       %p.btn-group.btn-group-xs
         = link_to 'Edit', edit_poll_path(poll), class: "btn btn-default"
-        = link_to 'Back', polls_path, class: "btn btn-default"
         = link_to 'Add question', new_poll_question_path(poll), class: "btn btn-default"
         = link_to 'Answer', new_poll_reply_path(poll), class: "btn btn-default"
 

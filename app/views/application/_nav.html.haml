@@ -1,5 +1,6 @@
 %nav.navbar.navbar-default
   .container-fluid
+    / Brand and toggle get grouped for better mobile display
     .navbar-header
       %button.navbar-toggle.collapsed{"data-target" => "#bs-example-navbar-collapse-1", "data-toggle" => "collapse", :type => "button"}
         %span.sr-only Toggle navigation
@@ -7,8 +8,21 @@
         %span.icon-bar
         %span.icon-bar
       =link_to "Tutspolls", root_path, class: "navbar-brand"
-
+      / Collect the nav links, forms, and other content for toggling
     #bs-example-navbar-collapse-1.collapse.navbar-collapse
       %ul.nav.navbar-nav
         %li.active
           =link_to "Polls", polls_path
+      %ul.nav.navbar-nav.navbar-right
+        -if current_user
+          %li
+            %span.navbar-text Signed in as #{current_user.email}
+            %li
+              =link_to destroy_session_path('user'), method: :delete do
+                %span.glyphicon.glyphicon-log-out
+                Sign out
+        -else
+          %li
+            =link_to new_session_path('user') do
+              %span.glyphicon.glyphicon-log-in
+              Sign in
