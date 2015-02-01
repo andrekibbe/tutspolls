@@ -2,6 +2,7 @@ class QuestionsController < ApplicationController
   before_action :set_question, only: [:show, :edit, :update, :destroy]
   before_action :set_poll
   before_action :set_kind_questions
+  before_action :admin!
 
   def index
     @questions = Question.all

@@ -12,5 +12,7 @@
     .container
       =content_tag :div, flash[:notice], class: "flash bg-success" if flash[:notice]
       =content_tag :div, flash[:alert], class: "flash bg-danger" if flash[:notice]
+      -flash.each do |name, msg|
+        =content_tag :div, msg, :id => "flash_#{name}" if msg.is_a?(String)
       = yield
     =yield :footer
